@@ -73,3 +73,104 @@ while i < N:
         i += 1
  
 print(index+1,':', arr[index])
+
+#5 (По другому) В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
+# arr = [10, -3, 0, 200, 400, 0, -10]
+# c = 0
+# d = 0
+
+# for i in arr:
+#     if i < 0:
+#         c = i
+#     if d > c:
+#         d = c
+# print(d)
+# print(arr.index(d))
+
+# 6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами. 
+# Сами минимальный и максимальный элементы в сумму не включать.
+
+# найти миин и его позицию
+# найти макч и его позицию
+# взять сумму от и до
+# from random import random
+
+# N = 10
+# a = [0]*N
+# print(a)
+# for i in range(N):
+#     a[i] = int(random()*50)
+# print(a)
+
+# minN = a.index(min(a))
+# maxN = a.index(max(a))
+# print(minN, maxN)
+# if maxN < minN:
+#     arrN = a[(maxN+1):(minN)]
+#     print(arrN)
+#     summ = sum(arrN)
+# else:
+#     arrN = a[minN+1:maxN]
+#     summ = sum(arrN)
+# print(summ)
+
+# 7. В одномерном массиве целых чисел определить два наименьших элемента. 
+# Они могут быть как равны между собой (оба являться минимальными), так и различаться.
+
+# arr7 = [10, 20, 23, 5, -6, 0, -5]
+
+# arr7copy = arr7.copy()
+# print(arr7copy)
+# i = 0
+# minlist = []
+# while i < 2:
+#     minlist.append(min(arr7copy))
+#     arr7copy.remove(min(arr7copy))
+#     i += 1
+
+# print(minlist)
+
+# 8. Матрица 5x4 заполняется вводом с клавиатуры кроме последних элементов строк. 
+# Программа должна вычислять сумму введенных элементов каждой строки и записывать ее в последнюю ячейку строки. В конце следует вывести полученную матрицу.
+M = 5
+N = 4
+a = []
+for i in range(N):
+    b = []
+    s = 0
+    print("%d-я строка:" % i)
+    for j in range(M-1):
+        n = int(input())
+        s += n
+        b.append(n)
+    b.append(s)
+    a.append(b)
+ 
+for i in a:
+    print(i)
+
+# 9.Найти максимальный элемент среди минимальных элементов столбцов матрицы.
+from random import random
+M = 10
+N = 5
+a = []
+for i in range(N):
+    b = []
+    for j in range(M):
+        n = int(random()*200)
+        b.append(n)
+        print('%4d' % n,end='')
+    a.append(b)
+    print()
+ 
+mx = -1
+for j in range(M):
+    mn = 200
+    for i in range(N):
+        if a[i][j] < mn:
+            mn = a[i][j]
+    if mn > mx:
+        mx = mn
+print("Максимальный среди минимальных: ", mx)
+
+        
