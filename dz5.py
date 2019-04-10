@@ -3,10 +3,16 @@
 # и вывести наименования предприятий, чья прибыль выше среднего и отдельно вывести наименования предприятий, чья прибыль ниже среднего.
 
 numbFabr = 4
-nameFabr = dict(f1 = 10, f2 = 12, f3 = 15, f4 = 16)
-profitFabr = [10, 12, 15, 16]
+nameFabr = dict(f1 = 10, f2 = 12, f3 = 9, f4 = 16)
 
-print(nameFabr['f1'])
-def midlProfit():
-    midl = sum(profitFabr)
-    print(midl)
+fabrVal = []
+for i in nameFabr:
+    fabrVal.append(nameFabr[i])
+
+midlFabr = sum(fabrVal)/len(fabrVal)
+
+for i in nameFabr:
+    if nameFabr[i] < midlFabr:
+        print(f'Fabric below middle {i}')
+    else:
+        print(f'Fabric under middle {i}')
